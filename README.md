@@ -103,6 +103,8 @@ Versioning follows the core releases of Mapbox GL JS which follows Semantic
 Versioning 2.0 as defined at <http://semver.org>. We will do our best not to
 make any breaking changes until Mapbox core makes a major version bump.
 
+Additional build number can be added to fix internal gem errors (like 0.43.0.**0**).
+
 ## License
 
 * The [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) and it's components are

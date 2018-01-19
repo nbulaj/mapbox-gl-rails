@@ -2,6 +2,10 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 require File.expand_path('../lib/mapbox-gl/rails/version', __FILE__)
 
 Gem::Specification.new do |gem|
+  gem.name          = 'mapbox-gl-rails'
+  gem.version       = MapboxGl::Rails.gem_version
+  gem.date          = '2018-01-19'
+
   gem.authors       = ['Nikita Bulai']
   gem.email         = ['bulajnikita@gmail.com']
   gem.description   = 'mapbox-gl-rails provides Mapbox GL JS sources and stylesheets as a ' \
@@ -10,11 +14,9 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/nbulaj/mapbox-gl-rails'
   gem.license       = 'MIT'
 
-  gem.files         = `git ls-files -- {app,bin,lib,test,spec}/* {LICENSE*,Rakefile,README*}`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec}/*`.split("\n")
-  gem.name          = 'mapbox-gl-rails'
+  gem.files         = `git ls-files`.split("\n").reject { |f| f =~ /^gemfiles|^\..+/ }
+  gem.test_files    = `git ls-files -- test/*`.split("\n")
   gem.require_paths = ['lib']
-  gem.version       = MapboxGL::Rails.gem_version
 
   gem.add_dependency 'railties', '>= 3.2', '< 5.3'
 

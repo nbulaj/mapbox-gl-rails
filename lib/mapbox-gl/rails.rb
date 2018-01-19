@@ -3,7 +3,7 @@
 require 'mapbox-gl/rails/version'
 require 'mapbox-gl/rails/engine'
 
-module MapboxGL
+module MapboxGl
   module Rails
   end
 end

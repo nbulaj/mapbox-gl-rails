@@ -12,8 +12,8 @@ class Updater < Thor
   def update
     self.destination_root = 'app/assets'
 
-    get File.join(BASE_URL, "v#{MapboxGL::Rails::VERSION::STRING}/mapbox-gl-dev.js"), 'javascripts/mapbox-gl.js'
-    get File.join(BASE_URL, "v#{MapboxGL::Rails::VERSION::STRING}/mapbox-gl.css"), 'stylesheets/mapbox-gl.css'
+    get File.join(BASE_URL, "v#{MapboxGl::Rails::VERSION::STRING}/mapbox-gl-dev.js"), 'javascripts/mapbox-gl.js'
+    get File.join(BASE_URL, "v#{MapboxGl::Rails::VERSION::STRING}/mapbox-gl.css"), 'stylesheets/mapbox-gl.css'
 
     inside destination_root do
       run('sass-convert -F css -T scss stylesheets/mapbox-gl.css stylesheets/mapbox-gl.scss')

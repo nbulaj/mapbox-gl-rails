@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module MapboxGL
+module MapboxGl
   module Rails
     ##
     # Mapbox GL JS & gem version.

@@ -4,7 +4,7 @@ class MapboxRailsTest < ActionDispatch::IntegrationTest
   teardown { clean_sprockets_cache }
 
   test 'engine is loaded' do
-    assert_equal ::Rails::Engine, MapboxGL::Rails::Engine.superclass
+    assert_equal ::Rails::Engine, MapboxGl::Rails::Engine.superclass
   end
 
   test 'javascript are served' do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module MapboxGL
+module MapboxGl
   module Rails
     class Engine < ::Rails::Engine
     end
