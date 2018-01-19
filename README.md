@@ -4,8 +4,10 @@
 [![Build Status](https://travis-ci.org/nbulaj/mapbox-gl-rails.svg?branch=master)](https://travis-ci.org/nbulaj/mapbox-gl-rails)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](#license)
 
-mapbox-gl-rails provides the [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/api/) library as a Rails engine for
+`mapbox-gl-rails` provides the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) library as a Rails engine for
 use with the asset pipeline. It uses the same versioning as the Mapbox GL JS.
+
+Supports Rails >= 3.2 (see [Travis build matrix]((.travis.yml))).
 
 ## Installation
 
