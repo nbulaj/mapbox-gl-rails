@@ -4,9 +4,10 @@ bundler_args: --without yard guard benchmarks
 cache: bundler
 sudo: false
 rvm:
-  - 2.2.7
-  - 2.3.4
-  - 2.4.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
 gemfile:
   - Gemfile
   - gemfiles/rails-3.2.gemfile
@@ -15,9 +16,11 @@ gemfile:
   - gemfiles/rails-5.1.gemfile
   - gemfiles/rails-master.gemfile
 matrix:
-  include:
-    - rvm: 2.2.7
-      gemfile: gemfiles/rails-3.2.gemfile
+  exclude:
+    - rvm: 2.2
+      gemfile: gemfiles/rails-master.gemfile
+    - rvm: 2.3
+      gemfile: gemfiles/rails-master.gemfile
   allow_failures:
     - gemfile: gemfiles/rails-master.gemfile
   fast_finish: true
