@@ -4,7 +4,6 @@ require File.expand_path('../lib/mapbox-gl/rails/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name          = 'mapbox-gl-rails'
   gem.version       = MapboxGl::Rails.gem_version
-  gem.date          = '2018-02-25'
 
   gem.authors       = ['Nikita Bulai']
   gem.email         = ['bulajnikita@gmail.com']
