@@ -21,6 +21,15 @@ and run `bundle install`.
 
 ## Usage
 
+In your `application.js`, include the following:
+
+
+```js
+//
+//*= require mapbox-gl
+//= require_tree .
+```
+
 In your `application.css`, include the css file:
 
 ```css
