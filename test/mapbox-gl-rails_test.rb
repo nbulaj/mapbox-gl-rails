@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MapboxRailsTest < ActionDispatch::IntegrationTest
+class MapboxRailsPluginTest < ActionDispatch::IntegrationTest
   teardown { clean_sprockets_cache }
 
   test 'engine is loaded' do

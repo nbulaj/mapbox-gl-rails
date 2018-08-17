@@ -21,5 +21,8 @@ module MapboxGl
       # Full version number
       STRING = [MAJOR, MINOR, TINY].compact.join('.')
     end
+
+    #https://www.mapbox.com/mapbox-gl-js/plugins/
+    def self.geocoder; '2.3.0' end 
   end
 end
