@@ -23,11 +23,9 @@ and run `bundle install`.
 
 In your `application.js`, include the following:
 
-
 ```js
 //
 //*= require mapbox-gl
-//*= require mapbox-gl-geocoder
 //= require_tree .
 ```
 
@@ -44,6 +42,29 @@ Then restart your webserver if it was previously running.
 
 Congrats! You now have Mapbox GL JS on board and check out the
 [Mapbox Examples](https://www.mapbox.com/mapbox-gl-js/examples).
+
+If you need to use any available plugins, then don't forget to add them to `application.js` and `application.css`:
+
+JS:
+
+```js
+//*= require mapbox-gl-geocoder
+// ...
+````
+
+CSS:
+
+```css
+/*
+ *= require mapbox-gl-geocoder
+ *= require mapbox-gl-draw
+ *= require mapbox-gl-directions
+ *= require mapbox-gl-compare
+ ...
+ */
+```
+
+Full list of available plugins you could find [here](https://github.com/nbulaj/mapbox-gl-rails/blob/master/plugins.yaml).
 
 ### Sass Support
 

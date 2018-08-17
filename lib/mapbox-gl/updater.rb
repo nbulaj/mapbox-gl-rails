@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'thor'
+require 'yaml'
 
 class Updater < Thor
   include Thor::Actions
@@ -21,19 +22,26 @@ class Updater < Thor
 
     remove_file 'stylesheets/mapbox-gl.css'
 
-    #https://www.mapbox.com/mapbox-gl-js/plugins/
-    plugins = [:geocoder]
-    for plugin in plugins
-      plugin_base_url = BASE_URL+"/plugins/mapbox-gl-#{plugin}"
-      #GEOCODER VERSION
-      get File.join(plugin_base_url, "v#{MapboxGl::Rails.send(plugin)}/mapbox-gl-#{plugin}.min.js"), "javascripts/mapbox-gl-#{plugin}.js"
-      get File.join(plugin_base_url, "v#{MapboxGl::Rails.send(plugin)}/mapbox-gl-#{plugin}.css"), "stylesheets/mapbox-gl-#{plugin}.css"
+    # https://www.mapbox.com/mapbox-gl-js/plugins/
+    #
+    plugins = YAML.load_file('plugins.yaml').fetch('plugins')
 
-      inside destination_root do
-        run("sass-convert -F css -T scss stylesheets/mapbox-gl-#{plugin}.css stylesheets/mapbox-gl-#{plugin}.scss")
+    plugins.each do |plugin_name, options|
+      begin
+        plugin_base_url = File.join(BASE_URL, "/plugins/mapbox-gl-#{plugin_name}")
+        plugin_version = options.fetch('version')
+
+        get File.join(plugin_base_url, "v#{plugin_version}/#{options.fetch('js')}"), "javascripts/mapbox-gl-#{plugin_name}.js"
+        get File.join(plugin_base_url, "v#{plugin_version}/#{options.fetch('css')}"), "stylesheets/mapbox-gl-#{plugin_name}.css"
+
+        inside destination_root do
+          run("sass-convert -F css -T scss stylesheets/mapbox-gl-#{plugin_name}.css stylesheets/mapbox-gl-#{plugin_name}.scss")
+        end
+
+        remove_file "stylesheets/mapbox-gl-#{plugin_name}.css"
+      rescue KeyError => error
+        raise KeyError, "#{error.message} for #{plugin_name} plugin!"
       end
-
-      remove_file "stylesheets/mapbox-gl-#{plugin}.css"
     end
   end
 end

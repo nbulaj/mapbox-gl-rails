@@ -1,21 +1,15 @@
-require "test_helper"
+require 'test_helper'
 
-class MapboxRailsTest < ActionDispatch::IntegrationTest
+class MapboxRailsComparePluginTest < ActionDispatch::IntegrationTest
   teardown { clean_sprockets_cache }
+
   def plugin
-    :geocoder
+    :compare
   end
+
   test "javascript are served" do
     get "/assets/mapbox-gl-#{plugin}.js"
     assert_mapbox_gl_plugin(response)
-  end
-
-  test "javascript of valid version" do
-    get "/assets/mapbox-gl-#{plugin}.js"
-
-    #weirdly, the plugins don't seem to contain the version number.
-    #assert_mapbox_gl_plugin(response, MapboxGl::Rails.send(plugin))
-    assert_mapbox_gl_plugin(response, plugin.to_s.camelize)
   end
 
   test "stylesheets are served" do
@@ -44,12 +38,12 @@ class MapboxRailsTest < ActionDispatch::IntegrationTest
     FileUtils.rm_rf File.expand_path("../dummy/tmp",  __FILE__)
   end
 
-  def assert_mapbox_gl_css_plugin(response, pattern = /mapboxgl-ctrl-/)
+  def assert_mapbox_gl_css_plugin(response, pattern = /mapboxgl-compare/)
     assert_response :success
     assert_match(pattern, response.body)
   end
 
-  def assert_mapbox_gl_plugin(response, pattern = /typeof/)
+  def assert_mapbox_gl_plugin(response, pattern = /mapboxgl-compare/)
     assert_response :success
     assert_match(pattern, response.body)
   end
