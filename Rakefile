@@ -10,9 +10,11 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
-desc 'Update Mapbox GL JS assets'
+desc 'Update Mapbox GL JS assets and plugins'
 task 'update-mapbox' do
   Updater.new.update
 end
+
+task update: 'update-mapbox'
 
 task default: :test
