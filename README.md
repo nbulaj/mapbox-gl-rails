@@ -34,7 +34,6 @@ In your `application.css`, include the css file:
 ```css
 /*
  *= require mapbox-gl
- *= require mapbox-gl-geocoder
  */
 ```
 
@@ -64,7 +63,7 @@ CSS:
  */
 ```
 
-Full list of available plugins you could find [here](https://github.com/nbulaj/mapbox-gl-rails/blob/master/plugins.yaml).
+Full list of integrated plugins you could find [here](https://github.com/nbulaj/mapbox-gl-rails/blob/master/plugins.yaml).
 
 ### Sass Support
 
