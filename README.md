@@ -27,6 +27,7 @@ In your `application.js`, include the following:
 ```js
 //
 //*= require mapbox-gl
+//*= require mapbox-gl-geocoder
 //= require_tree .
 ```
 
@@ -35,6 +36,7 @@ In your `application.css`, include the css file:
 ```css
 /*
  *= require mapbox-gl
+ *= require mapbox-gl-geocoder
  */
 ```
 
