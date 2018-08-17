@@ -22,12 +22,12 @@ class Updater < Thor
     remove_file 'stylesheets/mapbox-gl.css'
 
     #https://www.mapbox.com/mapbox-gl-js/plugins/
-    plugins = %i(:geocoder)
+    plugins = [:geocoder]
     for plugin in plugins
-
+      plugin_base_url = BASE_URL+"/plugins/mapbox-gl-#{plugin}"
       #GEOCODER VERSION
-      get File.join(BASE_URL, "v#{MapboxGl::Rails.send(plugin)}/mapbox-gl-#{plugin}-dev.js"), "javascripts/mapbox-gl-#{plugin}.js"
-      get File.join(BASE_URL, "v#{MapboxGl::Rails.send(plugin)}/mapbox-gl-#{plugin}.css"), "stylesheets/mapbox-gl-#{plugin}.css"
+      get File.join(plugin_base_url, "v#{MapboxGl::Rails.send(plugin)}/mapbox-gl-#{plugin}.min.js"), "javascripts/mapbox-gl-#{plugin}.js"
+      get File.join(plugin_base_url, "v#{MapboxGl::Rails.send(plugin)}/mapbox-gl-#{plugin}.css"), "stylesheets/mapbox-gl-#{plugin}.css"
 
       inside destination_root do
         run("sass-convert -F css -T scss stylesheets/mapbox-gl-#{plugin}.css stylesheets/mapbox-gl-#{plugin}.scss")
