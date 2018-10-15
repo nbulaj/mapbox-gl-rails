@@ -109,11 +109,14 @@
 
 .mapboxgl-ctrl-group {
   border-radius: 4px;
-  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background: #fff;
+
+  &:not(:empty) {
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
 
   > button {
     width: 30px;
@@ -290,17 +293,22 @@ a.mapboxgl-ctrl-logo {
 
 @media screen {
   .mapboxgl-ctrl-attrib.mapboxgl-compact {
-    padding-top: 2px;
-    padding-bottom: 2px;
     margin: 0 10px 10px;
     position: relative;
-    padding-right: 24px;
     background-color: #fff;
     border-radius: 3px 12px 12px 3px;
-    visibility: hidden;
 
     &:hover {
+      padding: 2px 24px 2px 4px;
       visibility: visible;
+
+      > a {
+        display: inline;
+      }
+    }
+
+    > a {
+      display: none;
     }
 
     &::after {
@@ -314,7 +322,6 @@ a.mapboxgl-ctrl-logo {
       width: 24px;
       height: 24px;
       box-sizing: border-box;
-      visibility: visible;
       border-radius: 12px;
     }
   }

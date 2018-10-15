@@ -14,7 +14,7 @@ module MapboxGl
       # Major version number
       MAJOR = 0
       # Minor version number
-      MINOR = 49
+      MINOR = 50
       # Smallest version number
       TINY = 0
 
