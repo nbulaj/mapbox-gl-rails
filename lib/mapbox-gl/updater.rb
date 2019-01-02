@@ -41,6 +41,8 @@ class Updater < Thor
         remove_file "stylesheets/mapbox-gl-#{plugin_name}.css"
       rescue KeyError => error
         raise KeyError, "#{error.message} for #{plugin_name} plugin!"
+      rescue OpenURI::HTTPError => error
+        raise "#{plugin_name} v#{plugin_version} could not be downloaded (#{error.message})!"
       end
     end
   end

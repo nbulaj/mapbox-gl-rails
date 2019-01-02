@@ -310,12 +310,12 @@ a.mapboxgl-ctrl-logo {
   }
 
   .mapboxgl-ctrl-attrib.mapboxgl-compact {
-    > * {
+    .mapboxgl-ctrl-attrib-inner {
       display: none;
     }
 
-    &:hover > * {
-      display: inline;
+    &:hover .mapboxgl-ctrl-attrib-inner {
+      display: block;
     }
 
     &::after {
