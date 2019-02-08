@@ -27,10 +27,10 @@ class Updater < Thor
     plugins = YAML.load_file('plugins.yaml').fetch('plugins')
 
     plugins.each do |plugin_name, options|
-      begin
-        plugin_base_url = File.join(BASE_URL, "/plugins/mapbox-gl-#{plugin_name}")
-        plugin_version = options.fetch('version')
+      plugin_base_url = File.join(BASE_URL, "/plugins/mapbox-gl-#{plugin_name}")
+      plugin_version = options.fetch('version')
 
+      begin
         get File.join(plugin_base_url, "v#{plugin_version}/#{options.fetch('js')}"), "javascripts/mapbox-gl-#{plugin_name}.js"
         get File.join(plugin_base_url, "v#{plugin_version}/#{options.fetch('css')}"), "stylesheets/mapbox-gl-#{plugin_name}.css"
 
