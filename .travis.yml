@@ -1,13 +1,21 @@
 language: ruby
-before_install: gem install bundler
-bundler_args: --without yard guard benchmarks
 cache: bundler
 sudo: false
+
+before_install:
+  - "find /home/travis/.rvm/rubies -wholename '*default/bundler-*.gemspec' -delete"
+  - rvm @global do gem uninstall bundler -a -x -I || true
+  - gem install bundler -v '~> 1.10'
+
+bundler_args: --without yard guard benchmarks
+
 rvm:
   - 2.2
   - 2.3
   - 2.4
   - 2.5
+  - 2.6
+
 gemfile:
   - Gemfile
   - gemfiles/rails-3.2.gemfile
@@ -15,6 +23,7 @@ gemfile:
   - gemfiles/rails-5.0.gemfile
   - gemfiles/rails-5.1.gemfile
   - gemfiles/rails-master.gemfile
+
 matrix:
   exclude:
     - rvm: 2.2
