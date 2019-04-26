@@ -85,6 +85,9 @@
 .mapboxgl-ctrl {
   clear: both;
   pointer-events: auto;
+
+  /* workaround for a Safari bug https://github.com/mapbox/mapbox-gl-js/issues/8185 */
+  transform: translate(0, 0);
 }
 
 .mapboxgl-ctrl-top-left .mapboxgl-ctrl {
@@ -160,6 +163,11 @@
   }
 
   padding: 5px;
+
+  &.mapboxgl-ctrl-icon-disabled {
+    opacity: 0.25;
+    border-color: #373737;
+  }
 
   &.mapboxgl-ctrl-zoom-out {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath style='fill:%23333333;' d='m 7,9 c -0.554,0 -1,0.446 -1,1 0,0.554 0.446,1 1,1 l 6,0 c 0.554,0 1,-0.446 1,-1 0,-0.554 -0.446,-1 -1,-1 z'/%3E %3C/svg%3E");
@@ -293,6 +301,8 @@ a.mapboxgl-ctrl-logo {
 
 @media screen {
   .mapboxgl-ctrl-attrib.mapboxgl-compact {
+    min-height: 20px;
+    padding: 0;
     margin: 10px;
     position: relative;
     background-color: #fff;
@@ -301,6 +311,7 @@ a.mapboxgl-ctrl-logo {
     &:hover {
       padding: 2px 24px 2px 4px;
       visibility: visible;
+      margin-top: 6px;
     }
   }
 
