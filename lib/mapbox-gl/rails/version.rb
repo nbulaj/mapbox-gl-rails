@@ -12,9 +12,9 @@ module MapboxGl
     # ProxyFetcher gem semantic versioning.
     module VERSION
       # Major version number
-      MAJOR = 0
+      MAJOR = 1
       # Minor version number
-      MINOR = 54
+      MINOR = 0
       # Smallest version number
       TINY = 0
 
