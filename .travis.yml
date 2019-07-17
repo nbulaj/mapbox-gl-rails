@@ -10,7 +10,6 @@ before_install:
 bundler_args: --without yard guard benchmarks
 
 rvm:
-  - 2.2
   - 2.3
   - 2.4
   - 2.5
@@ -18,17 +17,22 @@ rvm:
 
 gemfile:
   - Gemfile
-  - gemfiles/rails-3.2.gemfile
   - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-5.0.gemfile
   - gemfiles/rails-5.1.gemfile
+  - gemfiles/rails-5.2.gemfile
+  - gemfiles/rails-6.0.gemfile
   - gemfiles/rails-master.gemfile
 
 matrix:
   exclude:
-    - rvm: 2.2
-      gemfile: gemfiles/rails-master.gemfile
     - rvm: 2.3
+      gemfile: gemfiles/rails-6.0.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/rails-6.0.gemfile
+    - rvm: 2.3
+      gemfile: gemfiles/rails-master.gemfile
+    - rvm: 2.4
       gemfile: gemfiles/rails-master.gemfile
   allow_failures:
     - gemfile: gemfiles/rails-master.gemfile
