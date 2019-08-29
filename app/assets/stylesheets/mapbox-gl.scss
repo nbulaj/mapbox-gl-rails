@@ -125,7 +125,6 @@
 
 .mapboxgl-ctrl-group {
   border-radius: 4px;
-  overflow: hidden;
   background: #fff;
 
   &:not(:empty) {
@@ -161,6 +160,30 @@
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.mapboxgl-ctrl-group > button:focus {
+  box-shadow: 0 0 2px 2px rgba(0, 150, 255, 1);
+
+  &:focus-visible {
+    box-shadow: 0 0 2px 2px rgba(0, 150, 255, 1);
+  }
+
+  &:not(:focus-visible) {
+    box-shadow: none;
+  }
+
+  &:first-child {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 4px 4px;
+  }
+
+  &:only-child {
+    border-radius: inherit;
   }
 }
 
