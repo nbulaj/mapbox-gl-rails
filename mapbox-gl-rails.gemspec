@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- test/*`.split("\n")
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'railties', '>= 3.2', '< 6.0'
+  gem.add_dependency 'railties', '>= 3.2'
 
   gem.add_development_dependency 'activesupport'
   gem.add_development_dependency 'sass-rails'
