@@ -2,12 +2,12 @@
 #
 plugins:
   geocoder:
-    version: '4.0.0'
+    version: '4.4.1'
     js: 'mapbox-gl-geocoder.min.js'
     css: 'mapbox-gl-geocoder.css'
     url: https://github.com/mapbox/mapbox-gl-geocoder
   directions:
-    version: '4.0.0'
+    version: '4.0.2'
     js: 'mapbox-gl-directions.js'
     css: 'mapbox-gl-directions.css'
     url: https://github.com/mapbox/mapbox-gl-directions
