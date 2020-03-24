@@ -14,9 +14,9 @@ module MapboxGl
       # Major version number
       MAJOR = 1
       # Minor version number
-      MINOR = 8
+      MINOR = 9
       # Smallest version number
-      TINY = 1
+      TINY = 0
 
       # Full version number
       STRING = [MAJOR, MINOR, TINY].compact.join('.')
