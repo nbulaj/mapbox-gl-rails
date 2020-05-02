@@ -136,6 +136,14 @@ make any breaking changes until Mapbox core makes a major version bump.
 
 Additional build number can be added to fix internal gem errors (like 0.43.0.**0**).
 
+## Releasing
+
+1. Update gem version in `lib/mapbox-gl/rails/version.rb` to match latest MapBox GL version.
+2. Run `bundle exec rake update` (this will automatically load and convert assets).
+3. Commit
+4. Create gem and push it to Rubygems
+5. Create a GitHub release.
+
 ## License
 
 * The [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) and it's components are

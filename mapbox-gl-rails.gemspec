@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'railties', '>= 3.2'
 
   gem.add_development_dependency 'activesupport'
-  gem.add_development_dependency 'sass-rails'
+  gem.add_development_dependency 'sass-rails', '~> 5.1'
   gem.add_development_dependency 'thor'
 
   gem.required_ruby_version = '>= 1.9.3'
