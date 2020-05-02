@@ -3,22 +3,17 @@ cache: bundler
 sudo: false
 
 before_install:
-  - "find /home/travis/.rvm/rubies -wholename '*default/bundler-*.gemspec' -delete"
-  - rvm @global do gem uninstall bundler -a -x -I || true
-  - gem install bundler -v '~> 1.10'
+  - gem install bundler
 
 bundler_args: --without yard guard benchmarks
 
 rvm:
-  - 2.3
-  - 2.4
   - 2.5
   - 2.6
   - 2.7
 
 gemfile:
   - Gemfile
-  - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-5.0.gemfile
   - gemfiles/rails-5.1.gemfile
   - gemfiles/rails-5.2.gemfile
@@ -26,15 +21,6 @@ gemfile:
   - gemfiles/rails-master.gemfile
 
 matrix:
-  exclude:
-    - rvm: 2.3
-      gemfile: gemfiles/rails-6.0.gemfile
-    - rvm: 2.4
-      gemfile: gemfiles/rails-6.0.gemfile
-    - rvm: 2.3
-      gemfile: gemfiles/rails-master.gemfile
-    - rvm: 2.4
-      gemfile: gemfiles/rails-master.gemfile
   allow_failures:
     - gemfile: gemfiles/rails-master.gemfile
   fast_finish: true
