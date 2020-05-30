@@ -9,7 +9,7 @@ module MapboxGl
     end
 
     ##
-    # ProxyFetcher gem semantic versioning.
+    # Follows Mapbox GL JS versioning.
     module VERSION
       # Major version number
       MAJOR = 1
