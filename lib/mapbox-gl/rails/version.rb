@@ -12,11 +12,11 @@ module MapboxGl
     # Follows Mapbox GL JS versioning.
     module VERSION
       # Major version number
-      MAJOR = 1
+      MAJOR = 2
       # Minor version number
-      MINOR = 13
+      MINOR = 2
       # Smallest version number
-      TINY = 1
+      TINY = 0
 
       # Full version number
       STRING = [MAJOR, MINOR, TINY].compact.join('.')
