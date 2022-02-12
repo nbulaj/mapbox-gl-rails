@@ -2,22 +2,22 @@
 #
 plugins:
   geocoder:
-    version: '4.4.1'
+    version: '4.7.2'
     js: 'mapbox-gl-geocoder.min.js'
     css: 'mapbox-gl-geocoder.css'
     url: https://github.com/mapbox/mapbox-gl-geocoder
   directions:
-    version: '4.0.2'
+    version: '4.1.0'
     js: 'mapbox-gl-directions.js'
     css: 'mapbox-gl-directions.css'
     url: https://github.com/mapbox/mapbox-gl-directions
   compare:
-    version: '0.1.1'
+    version: '0.4.0'
     js: 'mapbox-gl-compare.js'
     css: 'mapbox-gl-compare.css'
     url: https://github.com/mapbox/mapbox-gl-compare
   draw:
-    version: '1.0.9'
+    version: '1.2.2'
     js: 'mapbox-gl-draw.js'
     css: 'mapbox-gl-draw.css'
     url: https://github.com/mapbox/mapbox-gl-draw
